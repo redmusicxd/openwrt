@@ -558,16 +558,19 @@ define Device/wf-2881
 endef
 TARGET_DEVICES += wf-2881
 
-define Device/mqmaker_witi-256m
-  DTS := WITI-256M
-  IMAGE_SIZE := $(ralink_default_fw_size_16M)
-  DEVICE_TITLE := MQmaker WiTi (256MB RAM)
-  DEVICE_PACKAGES := \
-	kmod-ata-core kmod-ata-ahci kmod-mt76x2 kmod-sdhci-mt7620 kmod-usb3 \
-	kmod-usb-ledtrig-usbport wpad-basic
-  SUPPORTED_DEVICES += witi
+define Device/xiaomi_mir3g-v2
+  DTS := mt7621_xiaomi_mir3g-v2
+  MTK_SOC := mt7621
+  IMAGE_SIZE := 14848k
+  DEVICE_VENDOR := Xiaomi
+  DEVICE_TITLE := Xiaomi Mi Router 4A GIGABIT
+  DEVICE_VARIANT := v2
+  DEVICE_ALT0_VENDOR := Xiaomi
+  DEVICE_ALT0_MODEL := Mi Router 4A
+  DEVICE_ALT0_VARIANT := Gigabit Edition
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2 wpad-basic
 endef
-TARGET_DEVICES += mqmaker_witi-256m
+TARGET_DEVICES += xiaomi_mir3g-v2
 
 define Device/mqmaker_witi-512m
   DTS := WITI-512M
